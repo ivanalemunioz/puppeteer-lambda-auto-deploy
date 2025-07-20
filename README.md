@@ -52,8 +52,9 @@ It converts your Puppeteer project into an API that can be invoked via HTTP requ
 1. Configure the `AWS_ACCESS_KEY_ID`,  `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION` secrets in your Github repository settings under `Settings > Secrets and variables > Actions > Secrets`.
 2. Configure the `S3_BUCKET`, `S3_KEY`, `S3_LAYER_BUCKET`, `S3_LAYER_KEY`, `LAYER_NAME`, and `LAMBDA_FUNCTION_NAME` environment variables in your Github repository settings under `Settings > Secrets and variables > Actions > Variables`.
 3. Don't forget to activate `Allow all actions and reusable workflows` in your repository settings under `Settings > Actions > General > Actions permissions`.
-4. Push your changes to the `main` branch. The Github Actions workflow will automatically build and deploy your Puppeteer project to AWS Lambda.
-5. Test the API by sending a POST request to `https://YOUR_LAMBDA_URL/v1/run` using a tool like Postman or curl. You should see the Puppeteer script running and returning a response.
+4. Configure the Lambda environment variables. You can get more info about the required vars in the `.env.example` file.
+5. Push your changes to the `main` branch. The Github Actions workflow will automatically build and deploy your Puppeteer project to AWS Lambda.
+6. Test the API by sending a POST request to `https://YOUR_LAMBDA_URL/v1/run` using a tool like Postman or curl. You should see the Puppeteer script running and returning a response.
     ```bash
     curl --location 'https://YOUR_LAMBDA_URL/v1/run' \
     --header 'Content-Type: application/json' \
